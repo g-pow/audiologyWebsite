@@ -1,30 +1,24 @@
 body {
-    background-color: black;
+    background-color: fff;
     text-align: center;
 }
 #topLeft {
     grid-area: topLeft;
-    background-color: #666;
-    border: 1px solid black;
 }
 #topRight {
     grid-area: topRight;
-    background-color: #666;
-    border: 1px solid black;
 }
 #centerItem {
     grid-area: centerItem;
-    background-color: #666;
-    border: 1px solid black;
 }
 #botLeft {
     grid-area: botLeft;
-    background-color: #666;
-    border: 1px solid black;
 }
 #botRight {
     grid-area: botRight;
-    background-color: #666;
+}
+nav > div {
+    background-color: #1aa45f;
     border: 1px solid black;
 }
 nav > div:hover {
@@ -56,7 +50,7 @@ nav > div:hover {
 }
 @media all and (min-width: 711px) { /* tablet size */
     body {
-        background-color: #1aa45f;
+        background-color: #fff;
     }
     /******************************************* TODO: FIX THE HEADER **************************************************/
     header {
