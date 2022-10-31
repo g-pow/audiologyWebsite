@@ -2,6 +2,23 @@ body {
     background-color: fff;
     text-align: center;
 }
+header {
+    margin: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#navIcon {
+    display: block;
+    height: 25px;
+    width: 25px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    background-image: url(images/menu-icon.png);
+    background-size: cover;
+}
+#accountInfo {
+    display: none;
+}
 #topLeft {
     grid-area: topLeft;
 }
@@ -52,19 +69,24 @@ nav > div:hover {
     body {
         background-color: #fff;
     }
+    #navIcon {
+        top: 10px;
+        left: 10px;
+        height: 35px;
+        width: 35px;
+    }
+    #accountInfo {
+        display: inline;
+        position: fixed;
+        right: 20px;
+        top: 5px;
+        color: #888;
+    }
+    #arrow {
+        color: #000
+    }
     /******************************************* TODO: FIX THE HEADER **************************************************/
-    header {
-        display: grid;
-        height: 50px;
-        grid-template-columns: 30px auto;
-    }
-    header:nth-child() {
-        grid-area: menu-icon;
-        background-image: url("images/menu-icon.png");
-    }
-    header:nth-child() {
-        grid-area: title;
-    }
+    
     nav {
         display: grid;
         position: absolute;
