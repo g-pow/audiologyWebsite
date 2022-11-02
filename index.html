@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Chanthakhoun Audiology</title>
+        <title onclick="changeScreen('home')">Chanthakhoun Audiology</title>
         <link rel="stylesheet" href="styles.css">
         <script src="script.js"></script>
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>
-            <div id="navIcon">
+            <div id="navIcon" onclick="showMenu()">
                 
             </div>
             <div>
@@ -24,53 +24,99 @@
 
         </header>
         <section id="popout">
-            <div id="close">&#060;</div>
+            <div id="closeIcon" onclick="closeMenu()">&#060;</div>
             <div>
                 <h3>Menu:</h3>
                 <ul>
-                    <li><a href="">Home</a></li><br>
-                    <li><a href="">Services</a></li><br>
-                    <li><a href="">Contact Us</a></li><br>
-                    <li><a href="">Payments</a></li><br>
-                    <li><a href="">Scheduling</a></li><br>
+                    <li><button onclick="changeScreen('home')">Home</a></li><br>
+                    <li><button onclick="changeScreen('services')">Services</a></li><br>
+                    <li><button onclick="changeScreen('contactUs')">Contact Us</a></li><br>
+                    <li><button onclick="changeScreen('payments')">Payments</a></li><br>
+                    <li><button onclick="changeScreen('calendar')">Scheduling</a></li><br>
                 </ul>
             </div>
 
         </section>
         <section id="home">
             <nav>
-                <div id="topLeft">
+                <div id="topLeft" onclick="changeScreen('services')">
                     <div id="menuIcon"><span id="menuCaption">Services</span></div>
                 </div>
-                <div id="topRight">
+                <div id="topRight" onclick="changeScreen('contactUs')">
                     <div id="menuIcon"><span id="menuCaption">Contact Us</span></div>
                 </div>
-                <div id="centerItem">
+                <div id="centerItem" onclick="changeScreen('home')">
                     <div id="menuIcon"><span id="menuCaption">Home</span></div>
                 </div>
-                <div id="botLeft">
+                <div id="botLeft" onclick="changeScreen('calendar')">
                     <div id ="menuIcon"><span id="menuCaption">Scheduling</span></div>
                 </div>
-                <div id="botRight">
+                <div id="botRight" onclick="changeScreen('payments')">
                     <div id="menuIcon"><span id="menuCaption">Payments</span></div>
                 </div>
             </nav>
-            <footer>
-                <h4>Contact us</h4>
-                <a href="mailto: ContactUs@ChantAudiology.com">ContactUs@ChantAudiology.com</a> | <a href="https://maps.google.com" target="_blank">123 Sesame St.</a> | (801) 555-5555
-            </footer>
         </section>
         <section id="services">
+            <figure>
+                <img src="./images/Audiologist.jpeg" alt="Audiologist">
+                <figcaption>Pictured above, an <span>Audiologist</span> uses an <span>otoscope</span> to check the hearing of a patient.</figcaption>
+            </figure>
+            <img src="./images/Audiology-test.jpg" alt="Audiology test" id="testPic">
+            <p>&emsp;Audiology (from Latin audīre, "to hear"; and from Greek -λογία, -logia) is a branch of science
+            that studies hearing, balance, and related disorders. Audiologists treat those with hearing
+            loss and proactively prevent related damage. By employing various testing strategies (e.g. 
+            behavioral hearing tests, otoacoustic emission measurements, and electrophysiologic tests), 
+            audiologists aim to determine whether someone has normal sensitivity to sounds. If hearing 
+            loss is identified, audiologists determine which portions of hearing (high, middle, or low 
+            frequencies) are affected, to what degree (severity of loss), and where the lesion causing 
+            the hearing loss is found (outer ear, middle ear, inner ear, auditory nerve and/or central 
+            nervous system). If an audiologist determines that a hearing loss or vestibular abnormality 
+            is present, they will provide recommendations for interventions or rehabilitation (e.g. 
+            hearing aids, cochlear implants, appropriate medical referrals).</p>
 
+            <p>&emsp;In addition to diagnosing audiologic and vestibular pathologies, audiologists can also 
+            specialize in rehabilitation of tinnitus, hyperacusis, misophonia, auditory processing 
+            disorders, cochlear implant use and/or hearing aid use. Audiologists can provide hearing 
+            health care from birth to end-of-life.</p>
+
+            <p>&emsp;An audiologist is a health-care professional specializing in identifying, diagnosing, 
+            treating, and monitoring disorders of the auditory and vestibular systems. Audiologists 
+            are trained to diagnose, manage and/or treat hearing, tinnitus, or balance problems. They 
+            dispense, manage, and rehabilitate hearing aids and assess candidacy for and map hearing 
+            implants, such as cochlear implants, middle ear implants and bone conduction implants. 
+            They counsel families through a new diagnosis of hearing loss in infants, and help teach 
+            coping and compensation skills to late-deafened adults. They also help design and implement 
+            personal and industrial hearing safety programs, newborn hearing screening programs, school 
+            hearing screening programs, and provide special or custom fitted ear plugs and other hearing 
+            protection devices to help prevent hearing loss. Audiologists are trained to evaluate peripheral 
+            vestibular disorders originating from pathologies of the vestibular portion of the inner ear. 
+            They also provide treatment for certain vestibular and balance disorders such as Benign Paroxysmal 
+            Positional Vertigo (BPPV). In addition, many audiologists work as auditory or acoustic scientists 
+            in a research capacity. </p>
+            <div id="video"><iframe width="640" height="390" src="https://www.youtube-nocookie.com/embed/JAq2nzONwyI" title="YouTube video player" allowfullscreen></iframe></div>
         </section>
         <section id ="payments">
-
+            <h2 id="payTitle">Make a Payment:</h2>
+            <form name="payment" onsubmit="return validateForm()" method="post">
+                Name on Card: <input type="text" name="cardholder" id="cardHolder"><br>
+                Card Number: &nbsp;&nbsp;<input type="text" name="cardNumber" id="cardNumber"> CVV: <input type="text" name="cvv" id="cvv"><br>
+                Billing Address: <input type="text" name="address" id="address"><br>
+                <input type="submit" value="Make Payment" id="paymentButton">
+            </form>
         </section>
         <section id="contactUs">
-
+            <h2 id="payTitle">Contact Us:</h2>
+            <li><a href="mailto: ContactUs@ChantAudiology.com">ContactUs@ChantAudiology.com</a></li>
+            <li><a href="https://maps.google.com" target="_blank">123 Sesame St.</a></li>
+            <li>(801) 555-5555</li>
         </section>
         <section id="calendar">
-
+            <h2 id="payTitle">Calendar:</h2>
+            <img src="./images/blank-calendar.jpg" id="calendarPic" alt="Calendar">
         </section>
+        <footer>
+            <h4>Contact us</h4>
+            <a href="mailto: ContactUs@ChantAudiology.com">ContactUs@ChantAudiology.com</a> | <a href="https://maps.google.com" target="_blank">123 Sesame St.</a> | (801) 555-5555
+        </footer>
     </body>
 </html>
